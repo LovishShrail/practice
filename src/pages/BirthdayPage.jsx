@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Heart, Sparkles, Star, Gift, Cake, Music, Volume2, VolumeX, Flame } from 'lucide-react';
+import { Heart, Sparkles, Star, Gift, Cake, Music, Volume2, VolumeX } from 'lucide-react';
 
 export default function BirthdayWish() {
   const [showContent, setShowContent] = useState(false);
@@ -12,8 +12,7 @@ export default function BirthdayWish() {
   const [candlesBlown, setCandlesBlown] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // AUDIO SETUP (Replace this URL with your actual song link)
-  // Tip: Put an mp3 file in your public folder and use "/song.mp3"
+  // AUDIO SETUP
   const audioUrl = "https://res.cloudinary.com/dpp8mm1mz/video/upload/v1769106689/Dooron_Dooron_-_Paresh_Pahuja_Piano_Cover_by_Ron_256kbps_pt0dxa.webm";
   const audioRef = useRef(new Audio(audioUrl));
 
@@ -90,38 +89,37 @@ export default function BirthdayWish() {
 
   const pages = [
     {
-      // 1. Intro - The "Digital Gift" Hook
+      // 1. Intro
       bg: 'from-pink-600 via-rose-500 to-purple-600',
       content: (
         <div className="text-center px-4 animate-fadeIn flex flex-col items-center justify-center h-full">
 
-          {/* Glowing Icon Container - Added spacing below */}
-          <div className="relative mb-10">
+          {/* Glowing Icon Container */}
+          <div className="relative mb-8 md:mb-10">
             <div className="absolute inset-0 animate-ping opacity-30 delay-75">
-              <Sparkles className="w-24 h-24 mx-auto text-yellow-200" />
+              <Sparkles className="w-20 h-20 md:w-24 md:h-24 mx-auto text-yellow-200" />
             </div>
-            <Heart className="w-24 h-24 mx-auto text-white animate-pulse relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]" fill="currentColor" />
+            <Heart className="w-20 h-20 md:w-24 md:h-24 mx-auto text-white animate-pulse relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]" fill="currentColor" />
           </div>
 
-          {/* Title - Added spacing below */}
-          <h1 className="text-6xl font-bold text-white mb-8 drop-shadow-lg animate-slideUp" style={{ fontFamily: 'cursive' }}>
-            Hy Ayushi
+          {/* Title - Responsive Text Size */}
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 md:mb-8 drop-shadow-lg animate-slideUp" style={{ fontFamily: 'cursive' }}>
+            Hey Ayushi
           </h1>
 
-          {/* Glassmorphism Text Box - Improved internal spacing */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl max-w-sm mx-auto animate-slideUp space-y-6" style={{ animationDelay: '0.2s' }}>
-            <p className="text-2xl text-white font-medium leading-relaxed">
+          {/* Glassmorphism Text Box */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-xl max-w-sm mx-auto animate-slideUp space-y-4 md:space-y-6" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
               I know you said <span className="text-yellow-300 font-bold">"no gifts"</span>...
             </p>
-            {/* <div className="w-16 h-1 bg-white/30 mx-auto rounded-full"></div> */}
-            <p className="text-lg text-pink-100 opacity-90 leading-relaxed">
+            <p className="text-base md:text-lg text-pink-100 opacity-90 leading-relaxed">
               ...so I coded this little corner of the internet just for you instead.
             </p>
           </div>
 
-          {/* Interactive Button-like CTA - Added spacing above */}
-          <div className="mt-12 animate-slideUp" style={{ animationDelay: '0.4s' }}>
-            <div className="inline-block px-10 py-4 bg-white/20 rounded-full border border-white/40 text-white font-bold tracking-widest uppercase text-sm animate-bounce shadow-[0_0_20px_rgba(255,255,255,0.3)] backdrop-blur-md hover:bg-white/30 transition-all">
+          {/* Button */}
+          <div className="mt-8 md:mt-12 animate-slideUp" style={{ animationDelay: '0.4s' }}>
+            <div className="inline-block px-8 py-3 md:px-10 md:py-4 bg-white/20 rounded-full border border-white/40 text-white font-bold tracking-widest uppercase text-xs md:text-sm animate-bounce shadow-[0_0_20px_rgba(255,255,255,0.3)] backdrop-blur-md hover:bg-white/30 transition-all">
               Press here →
             </div>
           </div>
@@ -135,18 +133,18 @@ export default function BirthdayWish() {
       content: (
         <div className="text-center space-y-6 px-4 animate-fadeIn">
           <div className="flex justify-center gap-4 mb-6">
-            <Star className="w-10 h-10 text-yellow-300 animate-spin" style={{ animationDuration: '4s' }} fill="currentColor" />
-            <Cake className="w-16 h-16 text-white animate-bounce drop-shadow-xl" />
-            <Star className="w-10 h-10 text-yellow-300 animate-spin" style={{ animationDuration: '4s' }} fill="currentColor" />
+            <Star className="w-8 h-8 md:w-10 md:h-10 text-yellow-300 animate-spin" style={{ animationDuration: '4s' }} fill="currentColor" />
+            <Cake className="w-12 h-12 md:w-16 md:h-16 text-white animate-bounce drop-shadow-xl" />
+            <Star className="w-8 h-8 md:w-10 md:h-10 text-yellow-300 animate-spin" style={{ animationDuration: '4s' }} fill="currentColor" />
           </div>
-          <h2 className="text-5xl font-bold text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)] mb-6 animate-slideUp" style={{ fontFamily: 'cursive' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)] mb-6 animate-slideUp" style={{ fontFamily: 'cursive' }}>
             Happy Birthday!
           </h2>
           <div className="space-y-4 animate-slideUp" style={{ animationDelay: '0.1s' }}>
-            <p className="text-2xl text-white leading-relaxed drop-shadow-md">To a truly</p>
-            <p className="text-3xl text-yellow-200 font-bold drop-shadow-lg">wonderful soul ✨</p>
+            <p className="text-xl md:text-2xl text-white leading-relaxed drop-shadow-md">To a truly</p>
+            <p className="text-2xl md:text-3xl text-yellow-200 font-bold drop-shadow-lg">wonderful soul ✨</p>
           </div>
-          <div className="text-6xl mt-8 animate-pulse drop-shadow-xl">🎉</div>
+          <div className="text-5xl md:text-6xl mt-8 animate-pulse drop-shadow-xl">🎉</div>
         </div>
       )
     },
@@ -157,21 +155,21 @@ export default function BirthdayWish() {
         <div className="text-center space-y-6 px-4 animate-fadeIn">
           <div className="relative mb-6">
             <div className="absolute inset-0 animate-ping opacity-30">
-              <Sparkles className="w-20 h-20 mx-auto text-yellow-200" />
+              <Sparkles className="w-16 h-16 md:w-20 md:h-20 mx-auto text-yellow-200" />
             </div>
-            <Sparkles className="w-20 h-20 mx-auto text-yellow-300 animate-pulse relative z-10" />
+            <Sparkles className="w-16 h-16 md:w-20 md:h-20 mx-auto text-yellow-300 animate-pulse relative z-10" />
           </div>
-          <h2 className="text-4xl font-bold text-white drop-shadow-lg mb-6 animate-slideUp" style={{ fontFamily: 'cursive' }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-6 animate-slideUp" style={{ fontFamily: 'cursive' }}>
             You know what?
           </h2>
-          <div className="space-y-5 animate-slideUp" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/30 transform hover:scale-105 transition-transform">
-              <p className="text-xl text-white font-medium leading-relaxed drop-shadow-sm">
+          <div className="space-y-4 md:space-y-5 animate-slideUp" style={{ animationDelay: '0.1s' }}>
+            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-xl border border-white/30 transform hover:scale-105 transition-transform">
+              <p className="text-lg md:text-xl text-white font-medium leading-relaxed drop-shadow-sm">
                 Even though life took us on different paths for a while...
               </p>
             </div>
-            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/30 transform hover:scale-105 transition-transform">
-              <p className="text-xl text-white font-medium leading-relaxed drop-shadow-sm">
+            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-xl border border-white/30 transform hover:scale-105 transition-transform">
+              <p className="text-lg md:text-xl text-white font-medium leading-relaxed drop-shadow-sm">
                 I'm so incredibly grateful we found our way back 🧡
               </p>
             </div>
@@ -180,17 +178,16 @@ export default function BirthdayWish() {
       )
     },
     {
-      // 4. HIDDEN POLAROID (New Feature)
+      // 4. HIDDEN POLAROID
       bg: 'from-pink-500 via-red-500 to-yellow-500',
       content: (
         <div className="text-center space-y-6 px-4 animate-fadeIn">
-          <h2 className="text-3xl font-bold text-white mb-4 drop-shadow-md" style={{ fontFamily: 'cursive' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-md" style={{ fontFamily: 'cursive' }}>
             Kept This One Safe
           </h2>
 
-          <div className="relative w-64 h-80 mx-auto bg-white p-4 pb-12 shadow-2xl rotate-3 transform transition-all duration-500 hover:rotate-0 hover:scale-105 cursor-pointer group rounded-sm">
+          <div className="relative w-56 h-72 md:w-64 md:h-80 mx-auto bg-white p-3 pb-10 md:p-4 md:pb-12 shadow-2xl rotate-3 transform transition-all duration-500 hover:rotate-0 hover:scale-105 cursor-pointer group rounded-sm">
             <div className="w-full h-full bg-gray-200 overflow-hidden relative border border-gray-100">
-              {/* REPLACE THE SRC BELOW WITH HER PHOTO URL */}
               <img
                 src="https://res.cloudinary.com/dpp8mm1mz/image/upload/v1769105324/WhatsApp_Image_2026-01-22_at_11.37.59_PM_ozvkz0.jpg"
                 alt="Birthday Girl"
@@ -200,60 +197,60 @@ export default function BirthdayWish() {
                 <span className="text-white font-bold drop-shadow-md text-2xl">✨</span>
               </div>
             </div>
-            <div className="absolute bottom-3 left-0 right-0 text-center text-gray-600 text-xl font-medium" style={{ fontFamily: 'cursive' }}>
+            <div className="absolute bottom-2 md:bottom-3 left-0 right-0 text-center text-gray-600 text-lg md:text-xl font-medium" style={{ fontFamily: 'cursive' }}>
               Beautiful as always
             </div>
           </div>
 
-          <p className="text-white/90 text-sm mt-4 italic font-medium">
+          <p className="text-white/90 text-xs md:text-sm mt-4 italic font-medium">
             (Tap the photo 😉)
           </p>
         </div>
       )
     },
     {
-      // 5. INTERACTIVE CAKE (New Feature)
+      // 5. INTERACTIVE CAKE
       bg: 'from-indigo-600 via-purple-600 to-pink-600',
       content: (
         <div className="text-center space-y-8 px-4 animate-fadeIn">
-          <h2 className="text-4xl font-bold text-white mb-8 drop-shadow-lg" style={{ fontFamily: 'cursive' }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 drop-shadow-lg" style={{ fontFamily: 'cursive' }}>
             Make a Wish!
           </h2>
 
           <div
-            className="relative w-48 h-48 mx-auto mt-10 cursor-pointer transition-transform active:scale-95"
+            className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mt-10 cursor-pointer transition-transform active:scale-95"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent page navigation when clicking cake
+              e.stopPropagation();
               setCandlesBlown(true);
             }}
           >
             {/* Cake Base */}
-            <div className="absolute bottom-0 w-full h-32 bg-pink-300 rounded-lg shadow-2xl flex items-center justify-center border-b-8 border-pink-400">
-              <span className="text-4xl">🎂</span>
+            <div className="absolute bottom-0 w-full h-28 md:h-32 bg-pink-300 rounded-lg shadow-2xl flex items-center justify-center border-b-8 border-pink-400">
+              <span className="text-3xl md:text-4xl">🎂</span>
             </div>
 
             {/* Candles Container */}
-            <div className="absolute -top-6 left-0 right-0 flex justify-center gap-6">
+            <div className="absolute -top-6 left-0 right-0 flex justify-center gap-4 md:gap-6">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="relative flex flex-col items-center">
                   {/* Flame */}
                   {!candlesBlown && (
-                    <div className="w-4 h-6 bg-yellow-400 rounded-[50%] animate-bounce shadow-[0_0_20px_rgba(255,255,0,0.8)] mb-1 relative">
+                    <div className="w-3 h-5 md:w-4 md:h-6 bg-yellow-400 rounded-[50%] animate-bounce shadow-[0_0_20px_rgba(255,255,0,0.8)] mb-1 relative">
                       <div className="absolute inset-0 bg-orange-500 rounded-[50%] opacity-50 animate-pulse"></div>
                     </div>
                   )}
                   {/* Smoke after blowing */}
                   {candlesBlown && (
-                    <div className="absolute -top-10 text-gray-200 text-2xl animate-pulse opacity-80" style={{ animationDuration: '2s' }}>💨</div>
+                    <div className="absolute -top-8 md:-top-10 text-gray-200 text-xl md:text-2xl animate-pulse opacity-80" style={{ animationDuration: '2s' }}>💨</div>
                   )}
                   {/* Candle Stick */}
-                  <div className="w-3 h-12 bg-white border border-gray-200 shadow-sm rounded-sm"></div>
+                  <div className="w-2 h-10 md:w-3 md:h-12 bg-white border border-gray-200 shadow-sm rounded-sm"></div>
                 </div>
               ))}
             </div>
           </div>
 
-          <p className="text-white text-xl font-medium mt-12 transition-all duration-500 drop-shadow-md">
+          <p className="text-white text-lg md:text-xl font-medium mt-12 transition-all duration-500 drop-shadow-md">
             {!candlesBlown ? "Tap the candles to blow them out 🌬️" : "Yay! May your wish come true! ✨"}
           </p>
         </div>
@@ -265,31 +262,31 @@ export default function BirthdayWish() {
       content: (
         <div className="text-center space-y-6 px-4 animate-fadeIn">
 
-          {/* Replaced Cake with a Glowing Heart for emotion */}
-          <div className="relative mb-8">
+          {/* Replaced Cake with a Glowing Heart */}
+          <div className="relative mb-6 md:mb-8">
             <div className="absolute inset-0 animate-ping opacity-30">
-              <Heart className="w-24 h-24 mx-auto text-pink-300" />
+              <Heart className="w-20 h-20 md:w-24 md:h-24 mx-auto text-pink-300" />
             </div>
-            <Heart className="w-24 h-24 mx-auto text-white animate-pulse relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" fill="currentColor" />
+            <Heart className="w-20 h-20 md:w-24 md:h-24 mx-auto text-white animate-pulse relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" fill="currentColor" />
           </div>
 
-          <h2 className="text-3xl font-bold text-white drop-shadow-md animate-slideUp" style={{ fontFamily: 'cursive' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-md animate-slideUp" style={{ fontFamily: 'cursive' }}>
             One last thing...
           </h2>
 
           {/* Sincere Message in a Glass Box */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl animate-slideUp transform transition-all hover:scale-105" style={{ animationDelay: '0.2s' }}>
-            <p className="text-xl text-white leading-relaxed font-light italic">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 md:p-6 border border-white/20 shadow-xl animate-slideUp transform transition-all hover:scale-105" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg md:text-xl text-white leading-relaxed font-light italic">
               "Genuinely, I'm just really glad we're talking again. You are, and always have been, someone very special to me."
             </p>
           </div>
 
           <div className="space-y-4 mt-8 animate-slideUp" style={{ animationDelay: '0.4s' }}>
-            <p className="text-3xl text-yellow-200 font-bold drop-shadow-lg" style={{ fontFamily: 'cursive' }}>
+            <p className="text-2xl md:text-3xl text-yellow-200 font-bold drop-shadow-lg" style={{ fontFamily: 'cursive' }}>
               Happy Birthday, Ayushi ❤️
             </p>
 
-            <p className="text-xs text-white/60 mt-8 tracking-widest uppercase font-semibold">
+            <p className="text-[10px] md:text-xs text-white/60 mt-8 tracking-widest uppercase font-semibold">
               (I'm always just a text away)
             </p>
           </div>
@@ -339,7 +336,7 @@ export default function BirthdayWish() {
       </button>
 
       {/* Dynamic Background Wrapper */}
-      <div className={`absolute inset-0 bg-linear-to-br ${pages[currentPage].bg} transition-colors duration-1000`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${pages[currentPage].bg} transition-colors duration-1000`} />
 
       {/* Particles */}
       {particles.map(particle => (
@@ -397,7 +394,8 @@ export default function BirthdayWish() {
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className="bg-white/10 rounded-[2.5rem] shadow-2xl p-8 min-h-162.5 flex flex-col justify-center transition-all duration-700 cursor-pointer backdrop-blur-xl border border-white/20 relative overflow-hidden"
+          // UPDATED CONTAINER CLASS FOR MOBILE
+          className="bg-white/10 rounded-[2rem] shadow-2xl p-6 md:p-8 min-h-[70vh] max-h-[85vh] w-full flex flex-col justify-center items-center transition-all duration-700 cursor-pointer backdrop-blur-xl border border-white/20 relative overflow-hidden"
           onClick={nextPage}
           style={{
             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1)'
@@ -405,7 +403,8 @@ export default function BirthdayWish() {
         >
           {pages[currentPage].content}
 
-          <div className="flex justify-center gap-2 mt-8 absolute bottom-8 left-0 right-0">
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 absolute bottom-6 left-0 right-0">
             {pages.map((_, idx) => (
               <div
                 key={idx}

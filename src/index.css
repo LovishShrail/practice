@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 
+body {
+  overscroll-behavior: none; /* Stops the pull-to-refresh bounce */
+  overflow: hidden; /* Prevents scrolling the background */
+}
